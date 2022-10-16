@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Traffic_Cameras</h1>
+
+    <form method="GET" action="/list">
+        <label for="latitude">Latitude:</label><br>
+        <input type="number" max="90" name="latitude"><br>
+        <label for="longitude">Longitude:</label><br>
+        <input type="number" min="-180" max="180" name="longitude"><br>
+        <label for="radius">Radius(in Km):</label><br>
+        <input type="text" min="0" name="radius">
+        <input type="submit" value="Send request">
+      </form>
+
+      <div>
+        {{range $error:=.errors}}
+        <p>{{$error}}</p>
+        {{end}}
+      </div>
+
+</body>
+</html>
